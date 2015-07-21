@@ -7,6 +7,7 @@
 //
 
 #import "TTNavigationController.h"
+#import "TTPopController.h"
 
 @interface TTNavigationController ()
 
@@ -60,6 +61,14 @@
 	}
 	
 	return result;
+}
+
+-(void)navigationController:(UINavigationController *)nc
+     willShowViewController:(UIViewController *)vc
+                   animated:(BOOL)animated
+{
+    [nc setNavigationBarHidden:([vc isKindOfClass:[TTPopController class]])
+                      animated:animated];
 }
 
 @end
