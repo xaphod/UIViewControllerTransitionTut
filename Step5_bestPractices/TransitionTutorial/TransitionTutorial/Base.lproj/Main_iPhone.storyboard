@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bBZ-J1-TPt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bBZ-J1-TPt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="Vbf-m5-rtq">
             <objects>
-                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="bBZ-J1-TPt" customClass="TTNavigationController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="bBZ-J1-TPt" customClass="TTNavigationController" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7LV-bM-Hot">
                         <autoresizingMask key="autoresizingMask"/>
@@ -33,7 +34,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qrA-3G-R81"/>
+                    <navigationItem key="navigationItem" id="qrA-3G-R81">
+                        <barButtonItem key="rightBarButtonItem" title="Screen1" id="9Nv-nJ-bjN"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="DeH-Ls-Gxp" kind="push" identifier="push" id="1Qw-cU-ewJ"/>
                     </connections>
@@ -55,7 +58,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dxV-cD-eTQ"/>
+                    <navigationItem key="navigationItem" id="dxV-cD-eTQ">
+                        <barButtonItem key="rightBarButtonItem" title="Screen2" id="ogu-DE-jVv"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvf-hO-fdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
