@@ -30,6 +30,50 @@
 	[self.view addGestureRecognizer:_pinch];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[self transitionCoordinator] animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        
+        if (self.navigationController) {
+            [self.navigationController setNavigationBarHidden:YES animated:animated];
+        }
+        
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        
+        NSArray *debugViews = [context containerView].subviews;
+        NSLog(@"%@", debugViews);
+        
+        if ([context isCancelled] ) {
+            if( self.navigationController ) {
+                [self.navigationController setNavigationBarHidden:NO animated:animated];
+            }
+        }
+    }];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [[self transitionCoordinator] animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        
+        if (self.navigationController) {
+            [self.navigationController setNavigationBarHidden:NO animated:animated];
+        }
+        
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        
+        if ([context isCancelled] ) {
+            if( self.navigationController ) {
+                [self.navigationController setNavigationBarHidden:YES animated:animated];
+            }
+        }
+    }];
+    
+    [super viewWillDisappear:animated];
+}
+
+
+
 #pragma mark - TTInteractivePinchTransitionDelegate
 
 -(void)delegateShouldPerformSegue:(TTInteractivePinchTransition*)transition
